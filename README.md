@@ -1,1 +1,1 @@
-# Qtile-Chainsawman
+# Qtile-Chainsawman Rice
