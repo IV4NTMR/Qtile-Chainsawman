@@ -1,0 +1,103 @@
+configuration {
+  display-drun: "App:";
+  display-window: "Windows:";
+  drun-display-format: "{name}";
+  font: "JetBrainsMono Nerd Font Medium 10";
+  modi: "window,run,drun";
+  show-icons: true;
+  icon-theme: "Papirus";
+}
+
+@theme "/dev/null"
+
+* {
+  bg: #282828;
+  bg-alt: #458588;
+
+  fg: #ebdbb2;
+  fg-alt: #fabd2f;
+
+  background-color: @bg;
+  
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  location: south;
+  anchor: south;
+  x-offset: 0;
+  y-offset: -8;
+  width: 20%;
+  border: 4;
+  border-radius: 16;
+  border-color: @fg;
+  padding: 4;
+}
+
+element {
+  border-radius: 8;
+  padding: 4 6 4 12;
+  text-color: @fg;
+}
+
+element selected {
+  text-color: @bg;
+  background-color: @fg;
+}
+
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 20;
+  margin: 0 12 0 0;
+  background-color: inherit;
+}
+
+textbox-powerline{
+	content: "";
+	expand:false;
+  font: "JetBrainsMono Nerd Font Medium 15";
+	text-color: @bg-alt;
+	background-color: @fg;
+}
+
+entry {
+  background-color: @fg;
+  padding: 4;
+  text-color: @bg;
+}
+
+inputbar {
+  border-radius: 12;
+	margin: 0 0 4 0;
+  children: [prompt, textbox-powerline, entry];
+}
+
+listview {
+  padding: 0;
+  background-color: @bg;
+  columns: 1;
+  lines: 8;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar, listview];
+}
+
+prompt {
+  background-color: @bg-alt;
+  enabled: true;
+  padding: 4 6 0 12;
+  text-color: @fg;
+}
+
+/* vim: ft=sass
