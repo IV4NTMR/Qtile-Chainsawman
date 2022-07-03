@@ -262,7 +262,7 @@ prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
 
 ##### DEFAULT WIDGET SETTINGS #####
 widget_defaults = dict(
-    font="JetBrainsMono Nerd Font Medium",
+    font="JetBrainsMono Nerd Font Bold",
     fontsize=12,
     padding=2,
     background=colors[2]
@@ -292,7 +292,7 @@ def init_widgets_list():
             background=colors[5],
             foreground=colors[0],
             padding=4,
-            fontsize=20,
+            fontsize=16,
         ),
 
         widget.TextBox(
@@ -443,6 +443,11 @@ def init_widgets_list():
             background=colors[5],
             format='{percent:2.0%} ',
             padding=2
+        ),
+        widget.Systray(
+            foreground=colors[0],
+            background=colors[5],
+            padding=2
         )
     ]
     return widgets_list
@@ -457,7 +462,7 @@ def init_widgets_screen1():
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=26, margin=[8, 8, 0, 8]))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20, margin=[0, 0, 0, 0]))]
 
 
 if __name__ in ["config", "__main__"]:
@@ -545,7 +550,9 @@ start = [
     "xinput set-prop \"Asus TouchPad\" \"libinput Natural Scrolling Enabled\" 1",
     "setxkbmap latam",
     "nitrogen --restore",
-    "picom --experimental-backends &"
+    "picom --experimental-backends &",
+#    "xfce4-power-manager &",
+#    "xcape -e 'Super_L=Super_L|Shift_L|Return'"
 ]
 
 for x in start:
